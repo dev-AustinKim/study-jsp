@@ -19,11 +19,14 @@ public class MemberFrontController extends HttpServlet{
 		String target = uri.replaceAll(req.getContextPath() + "/", "").split("\\.")[0];
 		Result result = null;
 		
+//		페이지 이동만 할 때는 그냥 쓴다. (Ex : join)
 		if(target.equals("join")) {
 			result = new Result();
 			result.setPath("/join.jsp");
+//			result.setRedirect(false); 이걸 해주는 이유는 /join.jsp 이게 안보였으면 좋겠어서이다.
 			result.setRedirect(false);
 			
+//		DB 조회할 때 Action을 붙인다. (Ex : joinAction)
 		}else if(target.equals("checkIdAction")) {
 			new MemberCheckIdActionController().execute(req, resp);
 			
@@ -44,6 +47,7 @@ public class MemberFrontController extends HttpServlet{
 		}
 		
 		if(result != null) {
+//			isRedirect는 보내는 방식을 정하는 것이다.
 			if(result.isRedirect()) {
 				resp.sendRedirect(result.getPath());
 			}else {

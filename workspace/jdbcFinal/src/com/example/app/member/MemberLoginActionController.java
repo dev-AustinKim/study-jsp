@@ -28,19 +28,10 @@ public class MemberLoginActionController implements Action {
 		}
 		
 		result.setPath(req.getContextPath() + path);
+		
+//		이 값이 front controller에서의 isRedirect를 판단하는 것이다.
 		result.setRedirect(true);
 		
 		return result;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

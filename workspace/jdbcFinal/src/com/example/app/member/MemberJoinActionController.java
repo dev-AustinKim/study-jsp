@@ -33,14 +33,3 @@ public class MemberJoinActionController implements Action{
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-

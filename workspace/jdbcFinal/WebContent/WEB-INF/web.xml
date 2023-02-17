@@ -12,6 +12,7 @@
   
   <servlet>
   	<servlet-name>Member</servlet-name>
+  	<!-- FrontController 경로 설정 -->
   	<servlet-class>com.example.app.MemberFrontController</servlet-class>
   </servlet>
   

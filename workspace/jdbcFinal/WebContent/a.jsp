@@ -16,7 +16,9 @@
 	$("#getData").on("click", function(){
 		$.ajax({
 			url: "b.jsp",
+			/* {} => 이게 없으니까 jsObject형식으로 보내준다. */
 			data: {"name": $(this).prev().prev().val()},
+			/* type : get => 생략하면 default 값은 get이다.*/
 			success: function(result){
 				$("#result").text(result);
 			}
@@ -24,10 +26,4 @@
 	})
 </script>
 </html>
-
-
-
-
-
-
 
